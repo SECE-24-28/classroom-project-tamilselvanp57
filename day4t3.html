@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+
+    <head>
+        <title>Items</title>
+        <style>
+            .container{
+                color: white;
+    ;
+                text-align: center;
+                padding: auto;
+                margin: auto;
+                width: 50%;
+                border: 2px solid rgb(247, 243, 243);
+            }
+            h1{
+                color: white;
+            }
+            body{
+                display:flex;
+                flex-direction: column;
+                background-color: rgb(15, 15, 15);
+                justify-items: center;
+                position: relative;
+                font-family: Arial, sans-serif;
+                margin: 20px;
+            }
+            input[type="text"] {
+                padding: 8px;
+                width: 200px;
+                margin-right: 10px;
+            }
+            button {
+                padding: 8px 12px;
+                margin-right: 5px;
+            }
+            ol {
+                margin-top: 20px;
+                text-align: left;
+                padding-left: 20px;
+                display: inline-block;
+            }
+            li {
+                margin-bottom: 5px;
+            }
+            button:hover{
+                background-color: lightgray;
+                cursor: pointer;
+                text: bold;
+
+            }
+            ol{
+                color: white;
+            }
+
+        </style>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const button = document.getElementById("add-item-btn");
+                const removeButton = document.getElementById("remove-item-btn");
+                const itemInput = document.getElementById("item-input");
+                const itemList = document.getElementById("item-list");
+
+                if (!button || !removeButton || !itemInput || !itemList) return;
+
+                function addItem() {
+                    const value = itemInput.value.trim();
+                    if (!value) return; // don't add empty items
+                    const li = document.createElement("li");
+                    li.textContent = value;
+                    itemList.appendChild(li);
+                    itemInput.value = "";
+                    itemInput.focus();
+                }
+
+                button.addEventListener("click", addItem);
+
+                // allow pressing Enter to add
+                itemInput.addEventListener('keydown', function (e) {
+                    if (e.key === 'Enter') addItem();
+                });
+
+                removeButton.addEventListener("click", function (){
+                    if (itemList.lastElementChild) {
+                        itemList.removeChild(itemList.lastElementChild);
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <center>    
+        <div class="container" >    
+        <h1>Olu Mall</h1>
+        <input type="text" id="item-input" placeholder="Enter your item">
+        <br><br>
+        <button id="add-item-btn">Add Item</button>
+        <button id="remove-item-btn">Remove Item</button>
+        <br><br>
+        <ol id="item-list">
+        </ol>
+        </div>
+
+        </center>
+
+    </body>
+</html>

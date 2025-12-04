@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY4 TEST5</title>
+</head>
+<body>  
+    <center>
+    <h1>Your time has come!!!!</h1>
+        <h1 id="c"></h1>
+        <h2 id = "light or dark mode"></h2>
+    </center>
+    <script>
+       const clcok = document.getElementById("c");
+       function clock(){
+        clcok.textContent = new Date().toLocaleTimeString();
+       }    
+       setInterval(clock, 1000);
+      clock();
+    </script>
+
+    </body>
+</html>
