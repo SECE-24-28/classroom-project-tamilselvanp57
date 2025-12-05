@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+
+    <head>
+        <title>DOM Manipulation</title>
+        <link rel="stylesheet" href="styles.css">
+    
+    <!-- <script>
+        function press(){
+            let body = document.getElementById("main");
+            let h1=document.createElement("h1");
+            h1.innerText="Hello World";
+            h1.style.color="blue";
+            h1.style.textAlign="center";
+            body.appendChild(h1);
+        }
+    </script> -->
+    <style>
+        body{
+            background-color: rgb(1, 1, 1);
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        button{
+            padding:10px 20px;
+            padding-top: 10px;
+
+        }
+    </style>
+    <script>
+        function press(){
+            let body = document.getElementById("main");
+            let h1 = document.createElement("h1");
+            let h2 = document.createElement("h2");
+            h1.innerHTML = "Suryaprakash";
+            h2.innerHTML = "CEO of SURVEX INDUSTRIES";
+            h1.style.color = "white";
+            h2.style.color = "white";
+            h1.style.textAlign = "center";
+            h2.style.textAlign = "center";
+            h1.style.backgroundColor = "black";
+            h2.style.backgroundColor = "black";
+            body.appendChild(h1);
+            body.appendChild(h2);
+        }
+    </script>
+    </head>
+    <body id="main">
+        <button id="btn" onclick="press()">Click Me</button>
+    </body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TML Corporates</title>
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        /* Sticky Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            z-index: 999;
+            backdrop-filter: blur(4px);
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: 0.3s;     
+        }
+
+        .header a:hover {
+            color: #00eaff;
+        }
+
+        .video-container {  
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            display:flex;
+            flex-wrap: wrap;
+        }
+
+        video {
+            position:absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display:flex;
+            flex-wrap: wrap; 
+        }
+
+        .overlay-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+             display:flex;
+            flex-wrap: wrap;
+        }
+
+        .overlay-text p {
+            font-size: 1.3rem;
+            margin-top: 10px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .footer p {
+            color: white;
+            font-size: 1rem;
+        }
+
+        section {
+            padding: 80px 80px;
+            font-size: 1.4rem;
+            line-height: 1.6;
+            color: white;
+        }
+
+        #about { background: #161616; }
+        #contact { background: #0f0f0f; }
+        .p1{
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #00eaff;
+        }
+
+        /* Contact styling */
+        .contact-box {
+            max-width: 600px;
+            margin: auto;
+            background: rgba(255,255,255,0.05);
+            padding: 25px;
+            border-radius: 10px;
+            color: #fff;
+        }
+
+        .contact-box p {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Sticky Header -->
+    <div class="header">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Background Video Section -->
+    <div class="video-container" id="home">
+        <video src="istockphoto-506330469-640_adpp_is.mp4" autoplay loop muted></video>
+
+        <div class="overlay-text">
+            <h1>WELCOME TO TML CORPORATES</h1>
+            <p class="p1">WHERE TECH MEETS INNOVATION</p>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 VS INDUSTRIES. All rights reserved.</p>
+        </div>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>
+            TML Corporates are the forward-thinking technology companies committed to building innovative 
+            digital solutions. We combine creativity, engineering excellence, and modern tools to 
+            develop products that shape the future.
+        </p>
+        <p>
+            Our mission is to develop intelligent systems, automate workflows, and create 
+            technology that makes everyday life smarter, safer, and more efficient.
+        </p>
+        <p>
+            With a passion for innovation, we work across various domains including AI, IoT,
+            software systems, and automation, constantly pushing the boundaries of what’s possible.
+        </p>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+
+        <div class="contact-box">
+            <p><strong>Email:</strong>tamilselvanp0507.com</p>
+            <p><strong>Phone:</strong> +91 8838358477</p>
+            <p><strong>Address:</strong> VS Industries, Coimbatore, Tamil Nadu, India</p>
+            <p>
+                Feel free to reach out to us for project collaborations, business inquiries,
+                or technical assistance. Our team will get back to you as soon as possible.
+            </p>
+        </div>
+    </section>
+
+</body>
+</html>

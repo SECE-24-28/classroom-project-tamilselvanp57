@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+
+    <head>
+        <title>onu ila</title>
+    </head>
+    <body>
+        <form id="error">
+            <input type="text" id="username" placeholder="username"><br><br>
+            <input type="password" id="password" placeholder="password"><br><br>
+            <button id="bt">login</button><br><br>
+            <div id="error" style="color:red;"></div>
+        </form>
+    
+    <script>
+        let er=document.getElementById("error");
+        let btn= document.getElementById("bt");
+        let us=document.getElementById("username");
+        let ps=document.getElementById("password");
+        btn.addEventListener("click",(e)=>{
+            e.preventDefault();
+            if(username.value=="" && password.value==""){
+                er.innerHTML = "please enter username and password";
+            }else{
+                alert("login successful");
+                us.value="";
+                ps.value="";
+            }
+        })
+    </script>
+    </body>
+</html>
+    

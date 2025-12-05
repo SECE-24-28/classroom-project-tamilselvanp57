@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>DAY3 WORK</title>
+        <!-- <style>
+           *{
+            margin:0;
+            padding:0;
+        
+        }
+        ol{
+            list-style-type: none;
+            display:flex;
+            flex-wrap:wrap;
+            justify-content: space-evenly;
+        }
+        h1{
+            color: rgb(0, 0, 0);
+            padding-left: 5px;
+        }
+        li{
+            padding-left: 10px;
+            font-size: 1.2rem;
+            font-size: 20px;        }
+        nav{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center; 
+            padding: 10px;
+            align-items: center;
+        }
+        video{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0%;
+            left: 0%;
+            position: fixed;
+            object-fit: cover;
+            z-index: -1;
+        }
+        .txt{
+            color: white;
+            position: fixed;
+            top:200px;
+            left: 100px;
+        }-->
+        img{
+            width: 30px;
+            height: 30px;
+            padding-left: 5px;
+            border-radius: 50%;
+            color: aliceblue;
+        }
+        img:hover{
+            transform: translateY(-5px)
+        }
+        footer
+        {
+            position : fixed;
+            left : 20px;
+            bottom: 10px;
+        }
+        button{
+            padding: 5px;
+            transition: all 0.3s;
+            color: rgb(255, 255, 255);
+            background-color: rgb(0, 0, 0);
+        }
+        button:hover{
+            letter-spacing: 4px;
+        }
+        </style> 
+    </head>
+    <body>
+        <!-- <header class="cont">
+        <nav> <h1> TRAVEL </h1> 
+        <ol class = "ls">
+            <li> HOME </li>
+            <li> ABOUT </li>
+            <li> GALLERY </li>
+            <li> CONTACT</li>
+        </ol>
+        </nav>
+      <main>
+        <video src="istockphoto-506330469-640_adpp_is.mp4" autoplay muted loop></video>
+      </main>
+      <div class="txt">
+        <h1> Discover the World with Us </h1>
+        <br><br>
+        <p style="color: rgb(0, 0, 0);"> Explore breathtaking destinations, immerse yourself in diverse cultures, and create unforgettable memories. Your adventure starts here! </p>
+        <button on> Get Started </button>
+      </div>
+      <footer>
+        <ol>
+        <li><img src="facebook.png" alt="Facebook"></li>
+        <li><img src="linkedin.png" alt="LinkedIn"></li>
+        <li><img src="linkedin.png" alt="LinkedIn"></li>
+        </ol>
+      </footer>
+        </header> -->
+         <script>
+           
+            function add(){
+                let a=parseInt(document.getElementById("t1").value);
+                let b=parseInt(document.getElementById("t2").value);
+                let c=a+b
+                document.getElementById("t3").value=c;
+            }
+            function sub(){
+                let a=parseInt(document.getElementById("t1").value);
+                let b=parseInt(document.getElementById("t2").value);
+                let c=a-b
+                document.getElementById("t3").value=c;
+            }
+            function image(){
+                //image[src]="wallpaperflare.com_wallpaper (3).jpg"
+                let img = document.getElementById("img1");
+                img.src="wallpaperflare.com_wallpaper (3).jpg";
+            }
+        </script>
+        <table>
+            <tr>
+                <td> Enter num1: </td>
+                <td> <input type="text" id="t1" placeholder="num1"> </td>
+            </tr><br><br>
+            <tr>
+                <td> Enter num2: </td>
+                <td> <input type="text" id="t2" placeholder="num2"> </td>
+            </tr>
+            <br><br>
+            <tr>
+                <td> Result: </td>
+                <td>  <input type="text" id="t3" placeholder="Answer"></td>
+            </tr> <br><br>
+                <td><button onclick="sub()"> SUB</button></td>
+                <td> <button onclick="add()"> ADD </button> </td>
+                <image src="wallpaperflare.com_wallpaper (2).jpg" id="img1" width="100px" height="100px">
+                <td><button onclick = "image()">imge</button></td>
+            </tr>
+
+        </table>  
+    </body>
+</html>
