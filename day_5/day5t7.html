@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head><title>Local Storage</title></head>
+<body>
+    <input type="text" id="t1" placeholder="Enter text to save">
+    <button id="saveBtn">Save</button>
+    <script>
+        let t1 = document.getElementById("t1");
+        let btn = document.getElementById("saveBtn");
+        btn.addEventListener("click",()=>{
+            localStorage.setItem("myname", t1.value);
+            t1.value="";
+            alert("Text saved to local storage!");
+        });
+    </script>
+</body>

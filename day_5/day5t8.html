@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head><title>Positioning Example</title></head>
+    <body>
+        <input type="text" id="t1" placeholder="Enter friend's name">
+        <input type="text" id="t2" placeholder="Enter friend's phone">
+        <button id="btn">Save Friend</button>
+        <script>
+            let t1 = document.getElementById("t1");
+            let t2 = document.getElementById("t2");
+            let btn = document.getElementById("btn");
+            btn.addEventListener("click",()=>{
+                let na = t1.value;
+                let ph = t2.value;
+                let frnd = {name:na, phone:ph};
+                localStorage.setItem("friend", JSON.stringify(frnd));
+                alert("Friend saved!");
+                t1.value="";
+                t2.value="";
+               
+            });
+             </script>
+    </body>
+</html>

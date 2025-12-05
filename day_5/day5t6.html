@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head> <title> Key down in HTML </title> </head>
+    <body>
+        <ol id ="list"></ol>
+        <input type="text" id="t1" placeholder="Search...">
+        <button id="check"> check </button>
+        <style>
+            #suggestions { list-style:none; padding:0; margin:6px 0 0 0; border:1px solid #ccc; max-width:220px; background:#fff; display:none; }
+            #suggestions li { padding:6px 8px; cursor:pointer; }
+            #suggestions li:hover { background:#f0f0f0; }
+        </style>
+        <script>
+            let arr=['HTML','CSS','JavaScript','ReactJS','NodeJS'];
+            let list = document.getElementById("list");
+            let t1 = document.getElementById("t1");
+            let check = document.getElementById("check");
+
+            // render the existing data into the visible list
+            arr.forEach(item => {
+                let li = document.createElement('li');
+                li.textContent = item;
+                list.appendChild(li);
+            });
+
+            // create suggestions container and insert it after the input
+            let suggestions = document.createElement('ul');
+            suggestions.id = 'suggestions';
+            t1.parentNode.insertBefore(suggestions, check);
+
+            function highlightMatch(value){
+                let items = list.getElementsByTagName('li');
+                for(let i=0;i<items.length;i++){
+                    items[i].style.backgroundColor = (items[i].innerText.toLowerCase() === value.toLowerCase()) ? 'green' : '';
+                }
+            }
+
+            // show suggestions as the user types
+            t1.addEventListener('input',()=>{
+                const value = t1.value.trim().toLowerCase();
+                suggestions.innerHTML = '';
+                if(!value){ suggestions.style.display = 'none'; return; }
+                const matches = arr.filter(s => s.toLowerCase().includes(value));
+                matches.forEach(m => {
+                    const li = document.createElement('li');
+                    li.textContent = m;
+                    li.addEventListener('click', ()=>{
+                        t1.value = m;
+                        suggestions.style.display = 'none';
+                        highlightMatch(m);
+                    });
+                    suggestions.appendChild(li);
+                });
+                suggestions.style.display = matches.length ? 'block' : 'none';
+            });
+
+            // use the check button to highlight an exact match
+            check.addEventListener("click",()=>{
+                highlightMatch(t1.value);
+            });
+        </script>
+    </body>
+</html>
