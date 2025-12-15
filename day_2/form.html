@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Application Form</title>
+</head>
+
+<body>
+    <form action="success.html">
+        <center>
+            <h1>Student Application Form</h1>
+        <table>
+            <tr>
+                <td>Name</td>
+                <td><input type="text" placeholder="Enter your name" minlength="4" maxlength="20"></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td><input type="number" placeholder="Enter your age"></td>
+            </tr>
+
+            <tr>
+                <td>Gender</td>
+                <td><input type="radio" name="gen" id="gen">Male</td>
+                <td><input type="radio" name="gen" id="gen">Female</td>
+            </tr>
+
+            <tr>
+                <td>Courses</td>
+                <td><input type="checkbox" name="sport" value="c">Java</td>
+                <td><input type="checkbox" name="sport" value="c">C</td>
+                <td><input type="checkbox" name="sport" value="c">C++</td>
+                <td><input type="checkbox" name="sport" value="c">Python</td>
+                <td><input type="checkbox" name="sport" value="c">Pandas</td>
+            </tr>
+
+            <tr>
+                <td>District</td>
+                <td>
+                <select name="district">
+                <option value="">Select the district</option>
+                <option value="tiruppur">Tiruppur</option>
+                <option value="salem">Salem</option>
+                <option value="karur">Karur</option>
+                <option value="kovai">Coimbatore</option>
+                </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Phone number</td>
+                <td><input type="number" minlength="9" maxlength="10"></td>
+            </tr>
+
+            <tr>
+                <td><input type="submit" ></td>
+            </tr>
+        </table>
+        </center>
+    </form>
+</body>
+</html>

@@ -5,6 +5,7 @@ import './App.css'
 import Header from './Header';
 import { Body } from './Body';
 import { Footer } from './Footer.jsx';
+import Search from './Search.jsx';
 
 function App() 
 {
@@ -24,6 +25,13 @@ function App()
          const newList=list.map((ls)=>(ls.id===id)?({...ls,fee:!ls.fee}):(ls))
          setList(newList)
       }
+      const handleSearch=(query)=>
+      {
+        const newList=list.filter((ls)=>
+          ls.sname.toLowerCase().includes(query.toLowerCase())
+        );
+        setList(newList);
+      }
   return (
     <>
         <Header title={"Student List"}/>
@@ -32,6 +40,7 @@ function App()
               handleDelete={handleDelete}
         />
            <Footer len={list.length} />
+           <Search handleSearch={handleSearch} />
     </>
   )
 }
