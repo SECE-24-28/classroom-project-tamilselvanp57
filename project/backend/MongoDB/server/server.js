@@ -98,7 +98,42 @@ app.post("/api/courses", async (req, res) => {
     res.status(500).json({ message: "Error creating course" });
   }
 });
+app.put("/api/courses/:id", async (req, res) => {
+  try {
+    const updatedCourse = await Course.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true, runValidators: true }
+    );
 
+    if (!updatedCourse) {
+      return res.status(404).json({ message: "Course not found" });
+    }
+
+    res.status(200).json(updatedCourse);
+  } catch (error) {
+    console.error("PUT ERROR ", error.message);
+    res.status(500).json({ error: error.message });
+  }
+});
+app.delete("/api/courses/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const deletedCourse = await Course.findByIdAndDelete(id);
+
+    if (!deletedCourse) {
+      return res.status(404).json({ message: "Course not found" });
+    }
+
+    res.status(200).json({
+      message: "Course deleted successfully",
+      deletedCourse
+    });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 app.listen(PORT, () => {
   console.log(`Server is running on PORT ${PORT}`);
 });
