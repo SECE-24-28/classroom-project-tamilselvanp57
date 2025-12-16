@@ -1,5 +1,6 @@
 import { useEffect,useState } from "react";
 import './App.css';
+import './style.css'  
 import { addCourse, getCourses,deleteCourse, updateCourse } from "./api/courseapi"; 
 
 function App(){
@@ -27,7 +28,7 @@ function App(){
   const handleDelete=async(id)=>{
     await deleteCourse(id);
     fetchCourses();
-    alert("Course Deleted Successfully");
+    alert("Movie Deleted Successfully");
   }
   // function to handle edit course
   const handleEdit=async(course)=>{
@@ -40,32 +41,39 @@ function App(){
 
     await updateCourse(editId,{title,duration})
     fetchCourses();
-    alert("Course Updated Successfully");
+    alert("Movie Updated Successfully");
   }
   return(
     <>
-    <form onSubmit={handleSubmit}>
+    <h1>Movie Management App</h1>
+    <form className="frm" onSubmit={handleSubmit}>
       <input type="text" value={title} onChange={(e)=>setTitle(e.target.value)} />
       <input type="text" value={duration} onChange={(e)=>setDuration(e.target.value)} />
-      <button type="submit">Add Course</button>
-      <button type="button" onClick={update}>Update Course</button>
-      <button></button>
+      <br/>
+      <button className="btn" type="submit">Add Movie</button>
+      <button type="button" className="btn" onClick={update}>Update Movie</button>
+      
     </form>
 
-  <ul>
+  <table className="list">
   {
     courses.map(course =>
-      <li key={course._id}>
-        {course.title} - {course.duration}
-
-        <button onClick={() => handleDelete(course._id)}>
-          Delete
-        </button>
-        <button onClick={() => handleEdit(course)}>Click</button>
-      </li>
+      
+        <tr key={course._id} >
+          <td>{course.title} - {course.duration}</td>
+          <td>
+           <button className="btn"onClick={() => handleDelete(course._id)}>
+           Delete
+          </button>
+          </td>
+         <td> 
+        <button className="btn" onClick={() => handleEdit(course)}>Click</button>
+        </td>
+         </tr>
     )
   }
-</ul>
+  </table>
+
 
     </>
   )
