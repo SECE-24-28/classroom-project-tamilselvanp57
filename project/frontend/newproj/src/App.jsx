@@ -49,6 +49,7 @@ function App(){
       <input type="text" value={duration} onChange={(e)=>setDuration(e.target.value)} />
       <button type="submit">Add Course</button>
       <button type="button" onClick={update}>Update Course</button>
+      <button></button>
     </form>
 
   <ul>
